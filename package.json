@@ -5,7 +5,8 @@
     "start": "webpack serve",
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
-    "build-dev": "webpack --mode=development"
+    "build-dev": "webpack --mode=development",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "react": "^18.2.0",
