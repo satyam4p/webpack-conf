@@ -1,7 +1,8 @@
 
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let config = {
 
@@ -44,7 +45,12 @@ let config = {
         
         ]
     },
-    plugins:[ new MiniCSSExtractPlugin()],
+    plugins:[ 
+        new CleanWebpackPlugin(),
+        new MiniCSSExtractPlugin(),
+        new HtmlWebpackPlugin({
+        template: "./index.html"
+    })],
 
     resolve: {
         extensions: ['.js', '.jsx']
