@@ -1,4 +1,6 @@
 
+import './styles/index.scss';
+
 const testObject = {
     helloworld: 1,
     newproject:6,
