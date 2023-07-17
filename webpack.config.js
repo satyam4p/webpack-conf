@@ -16,11 +16,11 @@ let config = {
     module: {
         rules:[
             {
-                test: /\.s?css$/i,
+                test: /\.(s[ac]|c)ss$/i, //supports sass, scss, css
                 use: [MiniCSSExtractPlugin.loader, 'css-loader', 'postcss-loader','sass-loader']
             },
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -29,7 +29,11 @@ let config = {
         
         ]
     },
-    plugins:[ new MiniCSSExtractPlugin()]
+    plugins:[ new MiniCSSExtractPlugin()],
+
+    resolve: {
+        extensions: ['.js', '.jsx']
+    }
 }
 
 

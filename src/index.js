@@ -1,5 +1,9 @@
+import ReactDOM from 'react-dom/client';
+import App from './Components/App';
 
-import './styles/index.scss';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<h1>Hello from react</h1>);
+root.render(<App/>);
 
 const testObject = {
     helloworld: 1,
