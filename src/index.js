@@ -15,5 +15,5 @@ const newObject = {
     ...testObject,
     leather:5    
 }
-console.log("newObject:: ", newObject);
-console.log(testObject);
+// console.log("newObject:: ", newObject);
+// console.log(testObject);
