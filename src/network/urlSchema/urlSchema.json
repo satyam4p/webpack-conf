@@ -1,0 +1,35 @@
+{
+    "Auth":{
+        "LOGIN": "/auth/login",
+        "LOGOUT": "auth/logout",
+        "REGISTER":"auth/register",
+        "LOGOUT_ALL": "auth/logoutAll"
+    },
+    "Tasks":{
+        "FETCH_ALL": "/tasks",
+        "PATCH_TASK": "/tasks/updateStatus/:id",
+        "DELETE_TASK": "/tasks/delete/:id",
+        "GET_TASK": "/tasks/:id",
+        "CREATE_TASK": "/tasks/create"
+    },
+    "Choices":{
+        "GETC_CHOICES":"/choices?entityKey=value"
+    },
+    "Config": {
+        "GET_CONFIG": "/config/:id",
+        "CREATE_CONFIG": "/config/create",
+        "DELETE_CONFIG": "/config/delete/:id"
+    },
+    "Commnets": {
+        "POST_COMMENT": "/comments/create",
+        "DELETE_COMMENT":"/comments/delete/:id",
+        "UPDATE_COMMENT": "/comments/update/:id",
+        "GET_ALL_TASK_COMMENTS":"/comments/:id" 
+    },
+    "Drawer":{
+        "recent_tasks": "/tasks/recent"
+    },
+    "Profile":{
+        "GET_PROFILE": "/profile"
+    }
+}

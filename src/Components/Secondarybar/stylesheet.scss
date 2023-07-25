@@ -1,0 +1,91 @@
+@use '../../theme//colors.scss' as *;
+
+.secondary-bar-container{
+    width: 96%;
+    height: 45px;
+    align-self: baseline;
+    margin-left:calc(100% - 98%);
+    border-radius:10px;
+    background: #F6F6F6;
+    position: absolute;
+    display: flex;
+    top: 3%;
+    align-items: center;
+    justify-content: space-between;
+
+    .right-section{
+        width: 6%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .theme-change-btn{
+            border: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            color: $dark-7;
+        }
+        .theme-change-btn:hover{
+            color: $grape-7;
+        }
+    }
+}
+
+.secodnary-dark{
+    background-color: $gray-4;
+}
+
+.hamburger-btn{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: inherit;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: none;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+.hamburger-btn:hover{
+    background-color: transparent;
+
+}
+.profile-btn{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #88AF9F;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: none;
+}
+
+.bar{
+    width: 90%;
+    height: 4px;
+    background-color: #014421;
+    transition: all .5s ease-in-out;
+}
+
+
+.bar2.showSideMenu{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.bar1.showSideMenu{
+    position: absolute;
+    transform: rotate(45deg);
+    width: 24px;
+
+}
+.bar3.showSideMenu{
+    position: absolute;
+    transform: rotate(-45deg) ;
+    width: 24px;
+}

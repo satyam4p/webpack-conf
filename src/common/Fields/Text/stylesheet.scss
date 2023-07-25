@@ -1,0 +1,22 @@
+.text-container{
+    border: 0.5px solid #C2C3C4;
+    border-radius: 5px;
+    height: 2em;
+}
+.header{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    display: flex;
+    height: 35px;
+    margin: auto;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text-container:focus{
+    border: 1px solid #7A9D8F;
+    outline: none;
+}
+

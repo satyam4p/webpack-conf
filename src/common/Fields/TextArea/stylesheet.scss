@@ -1,0 +1,15 @@
+@import '../../../theme/colors.scss';
+
+.text-area-container{
+    border: 0.5px solid #DEDEDE;
+    resize: vertical;
+    margin: 0px;
+    font-size: 14px;
+    height: 80px;
+    width: 100%;
+    padding: 5px;
+}
+.text-area-container:focus{
+    outline: none;
+    border: 1px solid $green-1;
+}

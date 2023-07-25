@@ -5,20 +5,24 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let config = {
-
     devServer: {
-        static: "./dist",
+        static: {
+            directory: path.join(__dirname, 'public'), // Set the base directory for serving content (optional)
+        },
+        historyApiFallback: true
     },
+    entry: path.resolve(__dirname, './src/index.js'),
     output:{
-        path: path.resolve(__dirname, 'dist'),
+        // publicPath:'/',
+        path: path.resolve(__dirname, 'build'),
         filename: 'main.js',
         assetModuleFilename: "images/[hash][ext][query]"
     },
-    
+    target: 'web',
     module: {
         rules:[
             {
-                test: /\.png|jpe?g|git|svg$i/,
+                test: /\.png|jpe?g|gif|svg$i/,
                 //  type: 'asset/resource'
                 // type: 'asset/inline'//will provide minified image in js resource itself
                 type: 'asset'// webpack automatically detactif it needs to be amde inline or not depending on size of image
@@ -49,7 +53,7 @@ let config = {
         new CleanWebpackPlugin(),
         new MiniCSSExtractPlugin(),
         new HtmlWebpackPlugin({
-        template: "./index.html"
+        template: "./public/index.html"
     })],
 
     resolve: {
@@ -64,7 +68,7 @@ module.exports = (env, argv) => {
         config['devtool'] = false
         config['mode'] = "production"
     }else{
-        config['devtool'] = "source-map"
+        config['devtool'] = false
         config['mode'] = "development"
     }
     

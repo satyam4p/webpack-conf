@@ -1,0 +1,27 @@
+.comments-actions-container{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center ;
+
+    button{
+
+        margin: 10px 5px 10px 0px;
+        background: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 25%;
+        height: 25px;
+        :hover{
+            cursor: pointer;
+        }
+    }
+
+    .action-btn:hover{
+        border-radius: 25px;
+        outline: 1px solid #7A9D8F;
+    }
+}

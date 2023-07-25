@@ -1,0 +1,17 @@
+.wrapper{
+    .lookup-container{
+        border: 0.5px solid #85888A;
+        overflow-y: hidden;
+        height: 30px;
+        min-width: 120px;
+        padding: 5px 8px 5px 8px;
+        background: transparent;
+    }
+    
+    .lookup-container:focus{
+        outline: none;
+        border: 1px solid #7A9D8F;
+    }
+}
+
+

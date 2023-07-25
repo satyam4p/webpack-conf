@@ -1,0 +1,131 @@
+.drawer-container{
+    width: 18%;
+    height: 86vh;
+    background-color: #F6F6F6;
+    display: block;
+    position: fixed;
+    z-index: 50;
+    top: calc(100vh - 89vh);
+    border-radius: 4px;
+    padding: 5px;
+
+    .search-container{
+        width: 100%;
+        height: 4vh;
+        display: flex;
+        margin-bottom: 15px;
+
+        .antd-search{
+            width: 100%;
+            height: 4vh;
+            outline: none;
+            padding: 5px;
+            .ant-input{
+                width: 85%;
+                height: 3.5vh;
+                border: 0.5px solid #D5D5D5;
+            }
+            .ant-input:focus-visible{
+                outline: none;
+            }
+            .ant-input-search-button{
+                height: 3.5vh;
+                border: 0.5px solid #DFDFDF;
+            }
+        }
+    }
+
+    .break{
+        width: 99%;
+        background-color: #CECECE;
+        height: 0.8px;
+    }
+
+    .record-Container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4px;
+        border-radius: 5px;
+        margin: 4px 0px;
+        font-size: 12px;
+        font-weight: 500;
+        .tag-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .status-tag{
+                font-size: 10px;
+                font-weight: 400;
+                width: max-content;
+                padding: 8px 4px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+            .label-tag{
+                font-size: 10px;
+                font-weight: 400;
+                width: max-content;
+                padding: 8px 4px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+            }
+            .status-tag.in_progress{
+                background-color: #D5D5D5;
+            }
+            .status-tag.complete{
+                background-color: #93D4BE;
+            }
+            .status-tag.new{
+                background-color: #ACD9FF;
+            }
+            .status-tag.closed{
+                background-color: #FAA6AA;
+            }
+            .label-tag.rca{
+                background-color: #C8C8F0;
+            }
+            .label-tag.bug{
+                background-color: #FAA6AA;
+            }
+            .label-tag.task{
+                background-color: #FBEFD1;
+            }
+
+        }
+        
+    }
+    
+    .record-Container:hover{
+        background-color: #D5D5D5;
+    }
+
+    .no-result{
+        font-size: small;
+        padding: 5px;
+    }
+
+}
+
+.show.showSideMenu{
+    left: 12.2%;
+    transition: all 0.2s ease-in;
+}
+
+.show{
+    left: 0.5%;
+    transition: all 0.2s ease-in;
+}
+
+.hide{
+    left: -100%;
+    transition: all 0.2s ease-out;
+}
+

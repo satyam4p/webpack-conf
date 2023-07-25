@@ -1,0 +1,101 @@
+@use './colors.scss' as *;
+
+body{
+    .main-container{
+        width: 100%;
+        height: 100vh;
+        font-family: "Open Sans","Noto Sans",Frutiger,Calibri,Myriad,Arial,Ubuntu,Helvetica,-apple-system,BlinkMacSystemFont,sans-serif;
+        font-size: 14px;
+    }
+}
+
+.light {
+    color: $dark-6;
+    background-color: $white;
+
+    .sidebar{
+        background-color: $gray-1;
+
+        .sidebar-index:hover{
+            background-color: $gray-5;
+            color: $dark-7;
+        }
+    }
+
+    .icon{
+        color: $dark-9;
+    }
+
+    .modal{
+        background-color: $white;
+        color: $dark-9;
+    }
+
+    input{
+        background-color: $white;
+        border-color: $dark-2;
+        color: $dark-9;
+        outline: none;
+        padding: 2px 4px 2px 4px;
+        margin: none;
+    }
+
+    button{
+        color: $dark-9;
+    }
+    button:hover{
+        color: $dark-9;
+    }
+
+    select{
+        color: $dark-9;
+        background-color: $white;
+    }
+
+}
+
+.dark {
+    color: $gray-0;
+    background-color: $dark-6;
+
+    .sidebar{
+        background-color: $dark-5;
+        color: $white;
+
+        .sidebar-index:hover{
+            background-color: $dark-7;
+            color: $white;
+        }
+    }
+    .modal{
+        background-color: $dark-5;
+        color: $white;
+    }
+
+    .icon{
+        color: $white;
+    }
+
+    input{
+        background-color: $dark-5;
+        border-color: $dark-0;
+        color: $white;
+        outline: none;
+        padding: 2px 4px 2px 4px;
+        margin: none;
+    }
+
+    button{
+        color: $white;
+    }
+    button:hover{   
+        color: $white;
+    }
+
+    select{
+        color: $white;
+        background-color: $dark-5;
+    }
+}
+
+ 

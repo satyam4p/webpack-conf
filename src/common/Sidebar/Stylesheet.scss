@@ -1,0 +1,183 @@
+@use '../../theme/colors.scss' as *;
+.sidemenu-container{
+    width: 12%;
+    height: 86vh;
+    top: calc(100vh - 89vh);
+    position: absolute;
+    display: block ;
+    background: #F6F6F6;
+    transition: all 0.3s;
+    z-index: 100;
+    font-family: "Noto Sans", Frutiger, Calibri, Myriad, Arial, Ubuntu, Helvetica,-apple-system;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight:500;
+    
+    .sidemenu__list{
+        flex-direction: column;
+        padding: 0px;
+        display: flex;
+        height: inherit;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+    }
+
+    .menu__index{
+        width: 90%;
+        min-height: 25px;
+        border: none;
+        border-radius: 5px;
+        background: transparent;
+        margin: 1px;
+        padding: 0px 4px;
+        text-align: left;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        z-index: 100;
+        justify-content: space-between;
+
+        a{
+            width: 100%;
+            height: inherit;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .menu__index.bottom{
+        width: 90%;
+        bottom: 2%;
+        position: fixed;
+    }
+    .menu__index:first-child{
+        padding: 0px;
+        margin: 0px 0px 5px 0px;
+    }
+    .menu__index:first-child:hover{
+        background-color: transparent;
+    }
+
+    .menu__index:hover{
+        cursor: pointer;
+    }
+
+    .menu__index:first-child.active{
+        background-color: $dark-5;
+        color: $white;
+    }
+
+    .menu__index.light_index.active{
+        background-color: $dark-0;
+        color: $dark-9;
+    }
+    .menu__index.dark_index.active{
+        background-color: $dark-7;
+        color: $white;
+    }
+
+
+
+    .sidemenu__sidePanels{
+        width: 140%;
+        height: 86vh;
+        max-height: 86vh;
+        display: block;
+        position: absolute;
+        top: 0%;
+        border-radius: 4px;
+        z-index: 0;
+        font-size: 14px;
+        overflow-y: auto;
+    }
+    .sidemenu__sidePanels.show{
+        left: 101%;
+        transition: all 0.2s ease-in;   
+    }
+    .sidemenu__sidePanels.hide{
+        display: none;
+    }
+    .sidemenu__sidepanel{
+        width: 96%;
+        min-height: 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+        margin: 4px 0px;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 4px 4px;
+        .sidepanel_index_tag-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 4px 0px;
+            .sidepanel_index_status-tag{
+                font-size: 10px;
+                font-weight: 400;
+                width: max-content;
+                padding: 2px 6px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                margin-right: 5px;
+                color: #000000;
+            }
+            .sidepanel_index_label-tag{
+                font-size: 10px;
+                font-weight: 400;
+                width: max-content;
+                padding: 2px 6px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                color: #000000;
+            }
+            .sidepanel_index_status-tag.in_progress{
+                background-color: $gray-3;
+            }
+            .sidepanel_index_status-tag.complete{
+                background-color: $green-3;
+            }
+            .sidepanel_index_status-tag.new{
+                background-color: $blue-3;
+            }
+            .sidepanel_index_status-tag.closed{
+                background-color: $red-2;
+            }
+            .sidepanel_index_label-tag.rca{
+                background-color: $grape-3;
+            }
+            .sidepanel_index_label-tag.bug{
+                background-color: $red-2;
+            }
+            .sidepanel_index_label-tag.task{
+                background-color: $yellow-1;
+            }
+
+        }
+    }
+
+    .sidemenu__sidepanel:hover{
+        background-color: #D5D5D5;
+        cursor: pointer;
+    }
+
+    .no-result{
+        font-size: small;
+        padding: 5px;
+    }
+}
+
+
+.sidemenu-container.show{
+    transform: translateX(0%)
+}
+.sidemenu-container.hide{
+    transform: translateX(-100%)
+}

@@ -1,0 +1,17 @@
+.settings-container{
+    display: flex;
+    width: 18%;
+    height: 86vh;
+    background-color: #F6F6F6;
+    display: block;
+    position: fixed;
+    z-index: 50;
+    top: calc(100vh - 89vh);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.settings-container.show{
+    left: 12.2%;
+    transition: all 0.2s ease-in;
+}

@@ -1,0 +1,25 @@
+.label-container{
+    padding: 6px 10px;
+    background-color: #EFEFEF;
+    min-width: 100px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    
+}
+.label-container:focus-visible{
+    border: none;
+    outline: none;
+}
+.Bug{
+    background-color: #FBC8C8;
+}
+.RCA{
+    background-color: #C8C8F0;
+}
+.Task{
+    background-color: #FBEFD1;
+}

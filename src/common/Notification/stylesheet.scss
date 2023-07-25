@@ -1,0 +1,38 @@
+
+.notification{
+    padding: 4px;
+    display: flex;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    border-radius: 5px;
+    width: 15%;
+    min-height: 6%;
+    align-items: center;
+    justify-content: center;
+    color: #45484A;
+    font-size:14px;
+
+    h4 {
+        padding: 10px;
+        margin: 0px;
+        font-weight: 500;
+    }
+    .close{
+        display: block;
+        position: absolute;
+        top: 2%;
+        right: 2%;
+    }
+    .close:hover{
+        cursor: pointer;
+        color: black;
+    }
+}
+
+.notification.warning {
+    background-color: #FF9F9F;
+}
+.notification.success {
+    background-color: #AADDBB;
+}

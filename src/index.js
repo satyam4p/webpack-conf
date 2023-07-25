@@ -1,19 +1,39 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './Components/App';
+import './index.css';
+// import App from './App';
+import reportWebVitals from './reportWebVitals';
+// import { ThemeProvider } from 'theme-ui';
+import theme from './theme/theme';
+import { RouterProvider } from 'react-router-dom';
+import {AuthProvider} from './context/AuthProvider';
+import { ModalProvider } from './context/ModalProvider';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
+import { ThemeProvider } from './theme/themeContext';
+import { routes } from './routes';
+import './theme/_main.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<h1>Hello from react</h1>);
-root.render(<App/>);
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}> 
+          <AuthProvider>
+            <ModalProvider>
+              {/* <Routes>
+                <Route path='/*' element={<App />} />
+                
+              </Routes> */}
+              <RouterProvider router={routes}/>
+            </ModalProvider>
+          </AuthProvider>
+      </ThemeProvider>
+    </Provider>
+  </React.StrictMode>
+);
 
-const testObject = {
-    helloworld: 1,
-    newproject:6,
-    deadend:4,
-}
-
-const newObject = {
-    ...testObject,
-    leather:5    
-}
-// console.log("newObject:: ", newObject);
-// console.log(testObject);
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

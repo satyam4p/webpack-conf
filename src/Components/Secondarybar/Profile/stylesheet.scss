@@ -1,0 +1,53 @@
+@use '../../../theme/colors.scss' as *;
+.profile-panel-container{
+    width: 200px;
+    height: 400px;
+    background:#F6F6F6;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    border-radius: 4px;
+    z-index: 300;
+
+    .items-container{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items:flex-start;
+    }
+
+    .profile-item{
+        width: 95%;
+        margin: 5px 5px;
+        align-self: center;
+
+        button{
+            width: 100%;
+            height: inherit;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            margin: 0;
+            padding: 5px;
+            text-align: left;
+            align-self: center;
+            display: flex;
+            align-items:center;
+            font-size: 12px;
+        }
+    }
+}
+.primary{
+    background: $gray-1;
+
+    button:hover{
+        background-color: $gray-3;
+    }
+}
+.secondary{
+    background: $dark-5;
+
+    button:hover{
+        background-color: $dark-7;
+    }
+}
