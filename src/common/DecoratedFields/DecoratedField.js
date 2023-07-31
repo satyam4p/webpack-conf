@@ -6,13 +6,13 @@ const DecoratedFieldHOC = ( props ) =>{
 
     return(
         <div
-            sx = {{
+            style = {{
                 display:'flex',
                 flexDirection:'row',
                 alignItems:'center',
                 margin:'4px',
             }}>
-                <div sx={{
+                <div style={{
                     width:'20%',
                     display:'flex',
                     alignItems:'center'
@@ -20,7 +20,7 @@ const DecoratedFieldHOC = ( props ) =>{
                     {iconsMap[props.icon] ? iconsMap[props.icon]() : null}&nbsp;&nbsp;
                     <p>{props.label}</p>
                 </div>
-                <div sx = {{
+                <div style = {{
                     marginLeft:'24px',
                     width:'44%',
                     display:'flex',
@@ -29,7 +29,7 @@ const DecoratedFieldHOC = ( props ) =>{
                     height:'24px',
                     alignItems:'center'
                 }}>
-                    <div sx={{
+                    <div style={{
                         display:'flex',
                         justifyContent:'left'
                     }}>

@@ -119,15 +119,15 @@ const TaskModal=(props)=>{
                             />
 
                         <TaskHeader editEnabled = {task.editEnabled} config = {taskConfig}/>
-                        <section sx={{
+                        <section style={{
                             width:'90%',
-                            marginY:'10px',
+                            margin:'10px 0px 10px 0px',
                             display:'flex',
                             flexDirection:'column',
                             justifyContent:'space-between',
                             minHeight:'10em'
                         }}>
-                            <div sx={{
+                            <div style={{
                                 display:'flex',
                                 alignItems:'center',
                                 flexDirection:'column',

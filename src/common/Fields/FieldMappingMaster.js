@@ -10,7 +10,7 @@ const FieldMapper = (props) =>{
     const label = props.label;
     if(requireDecoratedFields){
         return(
-                <div sx={{
+                <div style={{
                     width:'100%'
                 }}>
                     <DecoratedFieldHOC 
