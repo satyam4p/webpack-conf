@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
         config['devtool'] = false
         config['mode'] = "production"
     }else{
-        config['devtool'] = false
+        config['devtool'] = true
         config['mode'] = "development"
     }
     

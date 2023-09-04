@@ -59,7 +59,7 @@ const Register = (props)=>{
       errRef.current.focus()
     }else{
       setErrorMessage("");
-      errRef.current.style.display = 'none';  
+      // errRef.current.style.display = 'none';  
     }
   },1000)
   
@@ -70,7 +70,7 @@ const Register = (props)=>{
       errRef.current.focus()
     }else{
       setErrorMessage("");
-      errRef.current.style.display = 'none';  
+      // errRef.current.style.display = 'none';  
     }
   },1000)
 
@@ -86,7 +86,7 @@ const Register = (props)=>{
 
     if(username.trim() && username.length){
       setErrorMessage("");
-      errRef.current.style.display = 'none';  
+      // errRef.current.style.display = 'none';  
       return true
     }else{
         setErrorMessage("username is required");
@@ -106,7 +106,7 @@ const Register = (props)=>{
         setValid(false);
       }else{
         setErrorMessage("");
-        errRef.current.style.display = 'none';  
+        // errRef.current.style.display = 'none';  
       }
     },1000)
 
