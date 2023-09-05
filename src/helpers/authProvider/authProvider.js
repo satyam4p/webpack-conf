@@ -19,6 +19,7 @@ let authProvider = {
             if(response.status === 200){
                 const user = response.data?.user;
                 const token = response.data?.token;
+                window.localStorage.setItem("access_token",token)
                 authProvider.isAuthenticated = true;
                 authProvider.bearer = token;
                 callback(null, authProvider.isAuthenticated, {user, token});

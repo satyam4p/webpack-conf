@@ -53,6 +53,7 @@ export const AuthProvider=({ children })=>{
         
         if(response.status ===  200){
             setAuth({});
+            window.localStorage.removeItem('access_token');
             authProvider.isAuthenticated = false;
         }
     }

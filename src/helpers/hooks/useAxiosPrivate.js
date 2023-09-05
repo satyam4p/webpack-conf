@@ -18,8 +18,8 @@ const useAxiosPrivate =()=>{
                 let bearer = authorization ? authorization.split(" ")[1] : authorization;
                 
                 if(!config.headers['Authorization'] ){
-                    config.headers['Authorization'] = `Bearer ${auth?.token}`;
-                }else{
+                    // config.headers['Authorization'] = `Bearer ${auth?.token}`;
+                // }else{
                     let access_token = window.localStorage.getItem('access_token');
                     config.headers['Authorization'] = `Bearer ${access_token}`;
                 }

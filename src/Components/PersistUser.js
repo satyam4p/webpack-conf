@@ -26,7 +26,7 @@ const PersistUser =({children})=>{
         !auth?.token ? verifyRefreshToken() : setLoading(false);
 
         return () => isMounted = false;
-    },[auth?.token, refresh])
+    },[])
 
     // useEffect(() => {
     //     console.log(`isLoading: ${isLoading}`)
