@@ -94,10 +94,10 @@ const Comments =(props)=>{
                 taskComments && taskComments.length ? taskComments.reverse().map((comment, key) => {
                     let localTime  = moment(comment?.postedAt).fromNow();
                     return (
-                        <Card key={shortid.generate()} sx={{
+                        <div key={shortid.generate()} style={{
                             paddingY:'4px',
                         }}>
-                        <div sx={{
+                        <div style={{
                             marginY:'4px'
                         }}>
                             <span style={{fontSize:'12px', fontWeight:'500', textTransform: 'capitalize'}}>{iconsMap.profile(16)} {comment.user?.username}   </span>
@@ -106,7 +106,7 @@ const Comments =(props)=>{
                         <div style={{padding:'4px', fontWeight:'normal'}}>
                             {comment.body}
                         </div>
-                    </Card>
+                    </div>
                     )
                 }) : null  
             }
