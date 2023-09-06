@@ -153,24 +153,27 @@ const TaskModal=(props)=>{
                         </section>
                     </section> 
                     <section
-                        sx={{
-                            width:'90%',
-                            marginTop:'20px'
-                        }}>
-                        <div sx={{
-                            borderBottom:'0.5px solid #DEDEDE',
-                            width:'28%',
+                        style={{
+                            width:'100%%',
+                            marginTop:'20px',
                             display:'flex',
-                            justifyContent:'space-between'
+                            flexDirection:'column',
+                            alignItems:'center'
                         }}>
-                            <button sx={{
-                                borderBottom:()=>activeTab ==='comments' ? '2px solid #476451' : 'none',
+                        <div style={{
+                            borderBottom:'0.5px solid #DEDEDE',
+                            width:'90%',
+                            display:'flex',
+                            justifyContent:'flex-start'
+                        }}>
+                            <button style={{
+                                // borderBottom:()=>activeTab ==='comments' ? '2px solid #476451' : 'none',
                                 borderTop:'none',
                                 borderLeft:'none',
                                 borderRight:'none',
                                 bg:'transparent',
                                 padding:'4px',
-                                fontSize:0,
+                                fontSize:'12px',
                                 '&:hover':{
                                     border:'1px solid #F6F6F6'
                                 },
@@ -179,25 +182,21 @@ const TaskModal=(props)=>{
                             >
                                 <span>Comments</span>
                             </button>
-                            <button sx={{
-                                borderBottom:()=>activeTab ==='description' ? '2px solid #476451' : 'none',
+                            <button style={{
+                                // borderBottom:()=>activeTab ==='description' ? '2px solid #476451' : 'none',
                                 borderTop:'none',
                                 borderLeft:'none',
                                 borderRight:'none',
                                 bg:'transparent',
                                 padding:'4px',
-                                fontSize:0,
-                                '&:hover':{
-                                    border:'1px solid #F6F6F6'
-                                }
-                                
+                                fontSize:'12px',
                             }}
                             onClick={e=>toggleTab(e,'description')}
                             >
                                 <span>Description</span>
                             </button>
                         </div>
-                        <section className="data-container">
+                        <section className="data-container" style={{width:'90%', padding:'10px 0px'}}>
                             <Suspense fallback={<TextLoader/>}>
                                 { activeTab === 'comments' 
                                     ? <Comments editEnabled = {task.editEnabled}/>

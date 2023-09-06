@@ -11,7 +11,7 @@ const FieldMapper = (props) =>{
     if(requireDecoratedFields){
         return(
                 <div style={{
-                    width:'100%'
+                    width:'90%'
                 }}>
                     <DecoratedFieldHOC 
                         config = {props.config}
