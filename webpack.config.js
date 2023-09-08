@@ -14,9 +14,13 @@ let config = {
     entry: path.resolve(__dirname, './src/index.js'),
     output:{
         // publicPath:'/',
+        library:"taskboard",
+        libraryTarget:'umd',
         path: path.resolve(__dirname, 'build'),
-        filename: 'main.js',
-        assetModuleFilename: "images/[hash][ext][query]"
+        filename: 'taskboard.js',
+        globalObject: 'this',
+        assetModuleFilename: "images/[hash][ext][query]",
+        clean: true
     },
     target: 'web',
     module: {

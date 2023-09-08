@@ -108,49 +108,51 @@ const TaskModal=(props)=>{
                                 currentTaskStatus === "succeeded" || 
                                 currentTaskStatus === "failed" )) ? 
                 <>
-                    <section as={'form'} onSubmit = {(e)=>{handleSubmit(e)}}>
-                        <TaskActionBar 
-                            handleClose = { handleClose } 
-                            handleShare = {handleShare} 
-                            handleEdit = {handleEdit}
-                            currentTaskStatus = {currentTaskStatus}
-                            editEnabled = { task.editEnabled }  
-                            handleMoreAction = {handleMoreAction}
-                            />
+                    <section>
+                        <form onSubmit = {(e)=>{handleSubmit(e)}}>
+                            <TaskActionBar 
+                                handleClose = { handleClose } 
+                                handleShare = {handleShare} 
+                                handleEdit = {handleEdit}
+                                currentTaskStatus = {currentTaskStatus}
+                                editEnabled = { task.editEnabled }  
+                                handleMoreAction = {handleMoreAction}
+                                />
 
-                        <TaskHeader editEnabled = {task.editEnabled} config = {taskConfig}/>
-                        <section style={{
-                            width:'90%',
-                            margin:'10px 0px 10px 0px',
-                            display:'flex',
-                            flexDirection:'column',
-                            justifyContent:'space-between',
-                            minHeight:'10em'
-                        }}>
-                            <div style={{
+                            <TaskHeader editEnabled = {task.editEnabled} config = {taskConfig}/>
+                            <section style={{
+                                width:'90%',
+                                margin:'10px 0px 10px 0px',
                                 display:'flex',
-                                alignItems:'center',
                                 flexDirection:'column',
-                                margin:'4px',
+                                justifyContent:'space-between',
+                                minHeight:'10em'
                             }}>
-                                { taskConfig.map((field, key)=>{
-                                    if(field.entityKey !== "name" && field.entityKey !== "description"){
-                                        return(
-                                            <FieldMapper
-                                                config = {field}
-                                                key = {key} 
-                                                field = {field.entityType}
-                                                label = {field.label}
-                                                icon =  {field.icon}
-                                                options = {field.options}
-                                                editEnabled = {task.editEnabled}
-                                            />
-                                        )
-                                    }
-                                    return null;
-                                })}
-                            </div>
-                        </section>
+                                <div style={{
+                                    display:'flex',
+                                    alignItems:'center',
+                                    flexDirection:'column',
+                                    margin:'4px',
+                                }}>
+                                    { taskConfig.map((field, key)=>{
+                                        if(field.entityKey !== "name" && field.entityKey !== "description"){
+                                            return(
+                                                <FieldMapper
+                                                    config = {field}
+                                                    key = {key} 
+                                                    field = {field.entityType}
+                                                    label = {field.label}
+                                                    icon =  {field.icon}
+                                                    options = {field.options}
+                                                    editEnabled = {task.editEnabled}
+                                                />
+                                            )
+                                        }
+                                        return null;
+                                    })}
+                                </div>
+                            </section>
+                        </form>
                     </section> 
                     <section
                         style={{

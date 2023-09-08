@@ -41,7 +41,7 @@ const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare,
                 </button>
             </div>
             <div className="icons-container">
-                <button className="icon" sx={{
+                <button className="icon" style={{
                     background:'transparent',
                     border:'none'
                 }}
@@ -54,7 +54,7 @@ const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare,
                 <button 
                     className="icon"
                     onClick={e=>handleEdit(e)}
-                    sx={{
+                    style={{
                         background:'transparent',
                         border:'none'
                     }}>
@@ -65,7 +65,7 @@ const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare,
                 <button
                     className="icon"
                     onClick={e=>handleMore(e)}
-                    sx={{
+                    styles={{
                     background:'transparent',
                     border:'none'
                     }}>
@@ -78,7 +78,7 @@ const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare,
                     <button 
                     className="icon"
                     onClick={e=>handleEdit(e)}
-                    sx={{
+                    style={{
                         background:'transparent',
                         border:'none'
                     }}>
