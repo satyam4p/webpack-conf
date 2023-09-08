@@ -103,65 +103,65 @@ const BoardLayout = (props)=>{
                     <tbody className='table-body'>
                          {boardTasksArray && boardTasksArray.length 
                             ? boardTasksArray.map((task, index)=>{
-                                    return(
-                                        <tr className={`table-row ${theme}`}>
-                                            <td className='sequence'>
-                                                <div>
-                                                    {index+1}
-                                                </div>
-                                            </td>
-                                            <td className='name'>
-                                                <div className='task-name' ref={el => activeHeaderRef.current[index] = el} 
-                                                    onMouseOut={e=>handleHoverAction(e, task, index)} 
-                                                    onMouseOver={e=>handleHoverAction(e, task, index)}
-                                                    onClick = {e=>setInput(prev=>{
-                                                        if(prev?.index !== index){
-                                                            return {
-                                                                index,
-                                                                id: task?._id
-                                                            }
+                            return(
+                                <tr className={`table-row ${theme}`}>
+                                    <td className='sequence'>
+                                        <div>
+                                            {index+1}
+                                        </div>
+                                    </td>
+                                    <td className='name'>
+                                        <div className='task-name' ref={el => activeHeaderRef.current[index] = el} 
+                                            onMouseOut={e=>handleHoverAction(e, task, index)} 
+                                            onMouseOver={e=>handleHoverAction(e, task, index)}
+                                            onClick = {e=>setInput(prev=>{
+                                                if(prev?.index !== index){
+                                                    return {
+                                                        index,
+                                                        id: task?._id
+                                                    }
+                                                }
+                                                return {
+                                                    ...prev
+                                                }
+                                            })}>
+                                                { 
+                                                    activeInput && activeInput?.index === index ?
+                                                    <InputTableField taskMap = {taskMap} id = {task?._id} value = {task.name} changeHandler = {handleNameChange}/>
+                                                    : <div style={{width:'100%', height:'inherit', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
+                                                        <span>{task.name}</span>
+                                                        {openTask?.index === index 
+                                                            ? <span onClick={e=>handleTaskOpen(e, task?._id)} style={{padding:'2px', border:'1px solid lightgray'}}><>{iconsMap.expand()}&nbsp; Open</></span>
+                                                            : null                                                                    
                                                         }
-                                                        return {
-                                                            ...prev
-                                                        }
-                                                    })}>
-                                                        { 
-                                                            activeInput && activeInput?.index === index ?
-                                                            <InputTableField taskMap = {taskMap} id = {task?._id} value = {task.name} changeHandler = {handleNameChange}/>
-                                                            : <div style={{width:'100%', height:'inherit', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
-                                                                <span>{task.name}</span>
-                                                                {openTask?.index === index 
-                                                                    ? <span onClick={e=>handleTaskOpen(e, task?._id)} style={{padding:'2px', border:'1px solid lightgray'}}><>{iconsMap.expand()}&nbsp; Open</></span>
-                                                                    : null                                                                    
-                                                                }
-                                                            </div>
-                                                        }
-                                                </div>
-                                                
-                                            </td>
-                                            <td className='status' onClick={()=>setInput(null)}>
-                                                <div className={`status-value ${task.status.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
-                                                    {task.status}
-                                                </div>
-                                                
-                                            </td>
-                                            <td className='assignee' onClick={()=>setInput(null)}>
-                                                {task.assignee}
-                                            </td>
-                                            <td className='label' onClick={()=>setInput(null)}>
-                                                <div className={`label-value ${task.label.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
-                                                    {task.label}
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    )
-                                })
-                            : null    
-                        }
-                    </tbody>
-                </table>
-            </div> 
-        </div>
+                                                    </div>
+                                                }
+                                        </div>
+                                        
+                                    </td>
+                                    <td className='status' onClick={()=>setInput(null)}>
+                                        <div className={`status-value ${task.status.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
+                                            {task.status}
+                                        </div>
+                                        
+                                    </td>
+                                    <td className='assignee' onClick={()=>setInput(null)}>
+                                        {task.assignee}
+                                    </td>
+                                    <td className='label' onClick={()=>setInput(null)}>
+                                        <div className={`label-value ${task.label.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
+                                            {task.label}
+                                        </div>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    : null    
+                    }
+                </tbody>
+            </table>
+        </div> 
+    </div>
     )
 }
 

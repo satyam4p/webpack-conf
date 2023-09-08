@@ -77,7 +77,7 @@ const Comments =(props)=>{
                         paddingY:'4px',
                     }}>
                 <div className="username-text">
-                    <span style={{textTransform:'capitalize'}}>{iconsMap.profile(16)} {auth?.user?.username}</span>
+                    <span style={{textTransform:'capitalize',fontSize:'14px'}}>{iconsMap.profile(18)} {auth?.user?.username}</span>
                 </div>
                     <TextArea 
                         style={{fontSize:'12px'}}
