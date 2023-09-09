@@ -1,4 +1,4 @@
-import React,{ useState, useContext, createContext } from "react";
+import React,{ useState, useContext, createContext, useEffect } from "react";
 import './Stylesheet.scss';
 import iconsMap from "../IconsMapper/IconsMap";
 import { Tag } from 'antd';
@@ -87,7 +87,8 @@ const MenuList = ({children})=>{
 
     const Children = React.Children.map( children, (child, index)=>{
         if(child.type === MenuIndex){
-            return React.cloneElement( child, { theme, isActive: activeIndex?.index === index, onActive, index});
+            let isActive = child.props.isActive === child.props.id;
+            return React.cloneElement( child, { theme, isActive, onActive, index});
         }else{
             return child;
         }
@@ -105,9 +106,16 @@ Sidebar.MenuList = MenuList;
 
 const MenuIndex = ({children, isActive, onActive, index, arrowOnHover, 
     hasPanel, panelData, bottom = false, handleIndexAction = undefined, id, theme})=>{
-
+    
     const [arrow, setArrow] = useState(false);
     const showArrow = ()=> arrowOnHover ? arrow ? setArrow(false) : setArrow(true) : null;
+
+    useEffect(()=>{
+        if(isActive){
+            onActive(index, hasPanel, panelData, handleIndexAction, children, id);
+        }
+    },[])
+
     return(
         <div className={`menu__index sidebar-index ${theme === "light" ? "light_index" : "dark_index" } 
             ${isActive ? 'active' : '' } ${bottom ? 'bottom': ''}`}

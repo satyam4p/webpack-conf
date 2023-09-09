@@ -1,6 +1,7 @@
 import Sidebar from "../../common/Sidebar/Sidebar";
 import { selectDrawerDetails } from "../../features/Drawer/drawerSlice";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import useDrawerDetails from "../../helpers/hooks/useDrawerDetails";
 import shortid from "shortid";
@@ -11,15 +12,19 @@ import ThemeContext from "../../theme/themeContext";
 
 
 function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
-
+    const navigate = useNavigate();
     const [tasks, setTasks] = useState([]);
+    const [isActive, setActive] = useState('board');
     const drawerDetails = useSelector(selectDrawerDetails);
     const fetchDrawerDetails = useDrawerDetails();
     const execute = useActions();
     const handleIndexAction = (type)=>{
-
+        setActive(type)
         if(type !== "board" && type !== "archive" ){
             fetchDrawerDetails(type);
+        }else{
+            let to = `/${type}`;
+            navigate(to, {replace: true});
         }
     }
 
@@ -37,7 +42,7 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
         <div className="sidemenu-parent">
         <Sidebar showSideMenu={showSideMenu}>
             <Sidebar.MenuList>
-                <Sidebar.MenuIndex>
+                <Sidebar.MenuIndex id= {'create'} isActive={isActive}>
                     <button 
                         style={{
                             width:'100%', 
@@ -54,7 +59,7 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
                         {iconsMap.add()}&nbsp;Create
                     </button>
                 </Sidebar.MenuIndex>
-                <Sidebar.MenuIndex  id = {"board"} handleIndexAction = {handleIndexAction}>
+                <Sidebar.MenuIndex  id = {"board"} handleIndexAction = {handleIndexAction} isActive = {isActive}>
                     <Link to={"board"}> 
                         <div className="title-container">
                             {iconsMap.board()}&nbsp;Board
@@ -62,26 +67,43 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
                     </Link>
                 </Sidebar.MenuIndex>
 
-                <Sidebar.MenuIndex id = {"recent_tasks"} arrowOnHover hasPanel panelData = {tasks} handleIndexAction = {handleIndexAction}>
+                <Sidebar.MenuIndex id = {"recent_tasks"} isActive = {isActive} arrowOnHover hasPanel panelData = {tasks} handleIndexAction = {handleIndexAction}>
                     <div className="title-container">
                         {iconsMap.recentTasks()}&nbsp;Recent Tasks
                     </div>
                     
                 </Sidebar.MenuIndex>
-                <Sidebar.MenuIndex id = {"archive"} handleIndexAction = {handleIndexAction}>
+                <Sidebar.MenuIndex id = {"archive"} isActive = {isActive} handleIndexAction = {handleIndexAction}>
                     <Link to={"archive"}>
                         <div className="title-container">
                             {iconsMap.archive()}&nbsp;Archive
                         </div>
                     </Link>
                 </Sidebar.MenuIndex>
-                <Sidebar.MenuIndex id = {"settings"} bottom arrowOnHover hasPanel>
+                <Sidebar.MenuIndex id = {"settings"} isActive = {isActive} bottom arrowOnHover hasPanel>
                     <div className="title-container">
                         {iconsMap.settings()}&nbsp;Settings
                     </div>
                 </Sidebar.MenuIndex>
             </Sidebar.MenuList>
             <Sidebar.SidePanels id = {"recent_tasks"}>
+                    {tasks && tasks.length ? 
+                        tasks.map(({status, label, name, _id}, index)=>{
+                            const options = {
+                                status,
+                                label,
+                                name,
+                                id: _id
+                            }
+                            return(
+                                <Sidebar.SidePanelIndex key={shortid.generate()+index} options = {options}/>
+                            )
+                        })
+                        :
+                        null
+                    }
+            </Sidebar.SidePanels>
+            <Sidebar.SidePanels id = {"settings"}>
                     {tasks && tasks.length ? 
                         tasks.map(({status, label, name, _id}, index)=>{
                             const options = {
