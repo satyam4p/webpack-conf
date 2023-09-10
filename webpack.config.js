@@ -13,16 +13,26 @@ let config = {
     },
     entry: path.resolve(__dirname, './src/index.js'),
     output:{
-        // publicPath:'/',
-        library:"taskboard",
-        libraryTarget:'umd',
+        publicPath:'auto',
         path: path.resolve(__dirname, 'build'),
-        filename: 'taskboard.js',
-        globalObject: 'this',
-        assetModuleFilename: "images/[hash][ext][query]",
-        clean: true
+        filename: 'static/[id].js',
+        libraryTarget: 'umd',
+        library: 'lib',
+        umdNamedDefine: true,
+        globalObject: `(typeof self !== 'undefined' ? self : this)`
     },
     target: 'web',
+    optimization: {
+        splitChunks: {
+          cacheGroups: {
+            reactVendor: {
+              test: /[\\/]node_modules[\\/](react|react-dom|react-router-dom)[\\/]/,
+              name: 'vendor-react',
+              chunks: 'all',
+            },
+          },
+        },
+      },
     module: {
         rules:[
             {
@@ -55,7 +65,9 @@ let config = {
     },
     plugins:[ 
         new CleanWebpackPlugin(),
-        new MiniCSSExtractPlugin(),
+        new MiniCSSExtractPlugin({
+            filename: 'styles/styles.[id].css'
+        }),
         new HtmlWebpackPlugin({
         template: "./public/index.html"
     })],
