@@ -27,7 +27,8 @@
         "GET_ALL_TASK_COMMENTS":"/comments/:id" 
     },
     "Drawer":{
-        "recent_tasks": "/tasks/recent"
+        "recent_tasks": "/tasks/recent",
+        "settings":"/settings/list"
     },
     "Profile":{
         "GET_PROFILE": "/profile"

@@ -80,7 +80,7 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
                         </div>
                     </Link>
                 </Sidebar.MenuIndex>
-                <Sidebar.MenuIndex id = {"settings"} isActive = {isActive} bottom arrowOnHover hasPanel>
+                <Sidebar.MenuIndex id = {"settings"} isActive = {isActive} handleIndexAction = {handleIndexAction} bottom arrowOnHover hasPanel>
                     <div className="title-container">
                         {iconsMap.settings()}&nbsp;Settings
                     </div>
@@ -104,21 +104,7 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
                     }
             </Sidebar.SidePanels>
             <Sidebar.SidePanels id = {"settings"}>
-                    {tasks && tasks.length ? 
-                        tasks.map(({status, label, name, _id}, index)=>{
-                            const options = {
-                                status,
-                                label,
-                                name,
-                                id: _id
-                            }
-                            return(
-                                <Sidebar.SidePanelIndex key={shortid.generate()+index} options = {options}/>
-                            )
-                        })
-                        :
-                        null
-                    }
+                    
             </Sidebar.SidePanels>
         </Sidebar>
         </div>
