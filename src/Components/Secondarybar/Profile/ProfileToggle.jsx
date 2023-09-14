@@ -8,11 +8,10 @@ import { Link } from "react-router-dom";
 const LOGOUT_URL = 'auth/logout';
 const LOGOUT_ALL_URL = 'auth/logoutAll'
 
-const ProfileTogggle =({setToggleProile})=>{
+const ProfileTogggle =({toggleProfile, setToggleProile})=>{
     const navigate = useNavigate();
-    const { setAuth, signOut } = useAuth();
+    const { auth, setAuth, signOut } = useAuth();
     const axiosPrivate = useAxiosPrivate();
-
     const handlLogout= async (e, type)=>{
        signOut(type)
     }
@@ -25,23 +24,31 @@ const ProfileTogggle =({setToggleProile})=>{
     const [changeTheme, theme] = useTheme();
 
     return(
-        <div className={`profile-panel-container ${theme === "light" ? "primary" : "secondary"}`}>
-            <div classname = "items-container">
-                <div className="profile-item">
-                    <button onClick={handleProfileToggle}>Your Profle</button>
+        <div className={`profile-panel-container ${toggleProfile ? 'show' : 'hide'} ${theme === "light" ? "primary" : "secondary"}`}>
+                <section className="profile-detail">
+                    <section className="profile-image">
+                        
+                    </section>
+                    <section className="profile-username">
+                        {auth?.user?.username}
+                    </section>
+                </section>
+                <div classname = "items-container">
+                    <div className="profile-item">
+                        <button onClick={handleProfileToggle}>Your Profle</button>
+                    </div>
+                    <div style={{
+                            width:'100%',
+                            height:'0.8px',
+                            background:"#CECECE",
+                            alignSelf:'center',
+                            margin:'0px',
+                        }}/>
+                    <div className="profile-item">
+                        <button onClick={e=>handlLogout(e)}>Sign Out</button>
+                        <button onClick={e=>handlLogout(e, 'all')}>Sign Out All</button>
+                    </div>
                 </div>
-                <div sx={{
-                        width:'95%',
-                        height:'0.8px',
-                        bg:"#CECECE",
-                        alignSelf:'center',
-                        margin:'0px',
-                    }}/>
-                <div className="profile-item">
-                    <button onClick={e=>handlLogout(e)}>Sign Out</button>
-                    <button onClick={e=>handlLogout(e, 'all')}>Sign Out All</button>
-                </div>
-            </div>
         </div>
     )
 

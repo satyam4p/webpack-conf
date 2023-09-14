@@ -1,5 +1,19 @@
 @use '../../theme//colors.scss' as *;
 
+.profile-backdrop{
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    position: absolute;
+    background-color: #e5dfdf1e;
+}
+.profile-backdrop.show{
+    display: block;
+}
+.profile-backdrop.hide{
+    display: none;
+}
+
 .secondary-bar-container{
     width: 96%;
     height: 45px;
