@@ -83,7 +83,7 @@ const BoardLayout = (props)=>{
 
             <div className='layout-container'>
                 <table className='board-table'>
-                    <thead className='table-header'>
+                    <thead className={`table-header ${theme}`}>
                         <th>
                             #
                         </th>
