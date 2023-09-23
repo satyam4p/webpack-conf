@@ -13,14 +13,14 @@
             overflow-x: auto;
             border-collapse: collapse;
             overflow-y: auto;
-            // border-radius: 2%;
+
             .table-header{
                 text-align: left;
                 color: $gray-6;
                 text-transform: capitalize;
                 top: 0%;
                 position: sticky;
-                z-index: 100;
+                z-index: 50;
                 border: 0px;
                 font-size: medium;
                 th{
