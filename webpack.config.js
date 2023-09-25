@@ -69,8 +69,9 @@ let config = {
             filename: 'styles/styles.[id].css'
         }),
         new HtmlWebpackPlugin({
-        template: "./index.html"
-    })],
+        template: path.resolve(__dirname,"./index.html")
+    }
+    )],
 
     resolve: {
         extensions: ['.js', '.jsx']
