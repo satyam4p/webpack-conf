@@ -69,7 +69,7 @@ let config = {
             filename: 'styles/styles.[id].css'
         }),
         new HtmlWebpackPlugin({
-        template: "./src/index.html"
+        template: "./index.html"
     })],
 
     resolve: {
