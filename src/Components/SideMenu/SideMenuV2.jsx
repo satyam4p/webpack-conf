@@ -80,7 +80,7 @@ function SideMenu({showSideMenu, toggleAddMenu, setToggleAddMenu}){
                         </div>
                     </Link>
                 </Sidebar.MenuIndex>
-                <Sidebar.MenuIndex id = {"settings"} isActive = {isActive} handleIndexAction = {handleIndexAction} bottom arrowOnHover hasPanel>
+                <Sidebar.MenuIndex id = {"settings"} isActive = {isActive}  bottom arrowOnHover hasPanel>
                     <div className="title-container">
                         {iconsMap.settings()}&nbsp;Settings
                     </div>

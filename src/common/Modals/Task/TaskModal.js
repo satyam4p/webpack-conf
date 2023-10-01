@@ -88,16 +88,25 @@ const TaskModal=(props)=>{
     const handleMoreAction = (e, identifier )=>{
         e.preventDefault();
         e.stopPropagation();
-        const identifierSmall = identifier.toLowerCase();
-        if(identifierSmall === "delete task"){
-            const taskId = currentTask?._id;
-            deleteTask(taskId);
-            props.setModalType((prev)=>{
-                return {
-                    ...prev,
-                    isVisible:false
-                }
-            })
+        const identifierSmall = identifier.split(" ").join('_').toLowerCase();
+        switch(identifierSmall){
+            case "delete_task":
+                const taskId = currentTask?._id;
+                deleteTask(taskId);
+                props.setModalType((prev)=>{
+                    return {
+                        ...prev,
+                        isVisible:false
+                    }
+                })
+                return;
+            case "save_and_exit":
+                handleSubmit(e);
+                handleClose(e);
+
+                return
+            default:
+                return
         }
     }
 

@@ -22,7 +22,7 @@ const MoreOptions = ({handleMoreAction, currentTaskStatus})=>{
 
 }
 
-const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare, editEnabled, handleMoreAction}) => {
+const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare, editEnabled, handleMoreAction, handleSubmit}) => {
 
     const [showMore, setMore] = useState(false);
     const handleMore =(e)=>{
@@ -71,7 +71,7 @@ const TaskActionBar = ({currentTaskStatus, handleClose, handleEdit, handleShare,
                     }}>
                     {iconsMap.more(18, 800, showMore)}
                 </button>
-                { showMore ? <MoreOptions handleMoreAction = {handleMoreAction} currentTaskStatus = {currentTaskStatus}/> : null}
+                { showMore ? <MoreOptions handleSubmit = {handleSubmit} handleMoreAction = {handleMoreAction} currentTaskStatus = {currentTaskStatus}/> : null}
             </div>
             <div className="icons-container"
                 onClick={(e)=>handleClose(e)}>
