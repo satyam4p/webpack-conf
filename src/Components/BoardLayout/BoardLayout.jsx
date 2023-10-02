@@ -105,12 +105,12 @@ const BoardLayout = (props)=>{
                             ? boardTasksArray.map((task, index)=>{
                             return(
                                 <tr className={`table-row ${theme}`}>
-                                    <td className='sequence'>
+                                    <td data-cell="sequence" className='sequence'>
                                         <div>
                                             {index+1}
                                         </div>
                                     </td>
-                                    <td className='name'>
+                                    <td data-cell="name" className='name'>
                                         <div className='task-name' ref={el => activeHeaderRef.current[index] = el} 
                                             onMouseOut={e=>handleHoverAction(e, task, index)} 
                                             onMouseOver={e=>handleHoverAction(e, task, index)}
@@ -139,16 +139,16 @@ const BoardLayout = (props)=>{
                                         </div>
                                         
                                     </td>
-                                    <td className='status' onClick={()=>setInput(null)}>
+                                    <td data-cell="status" className='status' onClick={()=>setInput(null)}>
                                         <div className={`status-value ${task.status.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
                                             {task.status}
                                         </div>
                                         
                                     </td>
-                                    <td className='assignee' onClick={()=>setInput(null)}>
+                                    <td data-cell="assignee" className='assignee' onClick={()=>setInput(null)}>
                                         {task.assignee}
                                     </td>
-                                    <td className='label' onClick={()=>setInput(null)}>
+                                    <td data-cell="label" className='label' onClick={()=>setInput(null)}>
                                         <div className={`label-value ${task.label.trim().split(" ").join("-").toLowerCase()} ${theme}`}>
                                             {task.label}
                                         </div>

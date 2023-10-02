@@ -41,8 +41,8 @@
                 font-weight: 510;
                 border: 0px;
                 .table-row td{
-                    min-width: 30px;
-                    max-width: 100px;
+                    // min-width: 30px;
+                    // max-width: 100px;
                     padding: 10px;
                     border: 0.5px solid lightgray;
                     position: relative;
@@ -113,4 +113,33 @@
             
         }
     }
+}
+
+@media (max-width: 550px){
+    th{
+        display: none;
+    }
+    .table-row{
+        padding-top: 40px !important;
+    }
+    td{
+        display: flex;
+        border: none !important;
+        align-items: center;
+        // padding: 5px 2px  !important;
+        
+    }
+    td::before{
+        content: attr(data-cell) ": ";
+        padding: 10px; 
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    td:first{
+        padding-top: 10px !important;
+    }
+    td:last-child{
+        padding-bottom: 10px !important;
+    }
+    
 }
