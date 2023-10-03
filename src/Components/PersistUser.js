@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useRefreshToken from '../helpers/hooks/useRefreshToken';
 import useAuth from '../helpers/hooks/useAuth';
+import './persisteUserStylesheet.scss';
 
 const PersistUser =({children})=>{
 
@@ -38,7 +39,7 @@ const PersistUser =({children})=>{
         <>
             {
             isLoading 
-                ? <p>Loading....</p>
+                ? <div className='loader'><p>Loading....</p></div>
                 : children
             }
         </>
