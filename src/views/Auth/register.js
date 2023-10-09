@@ -26,13 +26,20 @@ const Register = (props)=>{
     }else{
       /** need to send the request for registration */
       await register({email, password, repassword, username},(response)=>{
-        console.log("response for register:: ",response);
+        setErrorMessage(response.message)
+        errRef.current.style.display = "block"
+        errRef.current.focus();
+        setTimeout(()=>{
+          errRef.current.style.display = "none"
+        }, 3000);
       })
     }
 
     setemail('')
+    setUsernme('')
     setPassword('')
     setRepassword('')
+
   }
   const validateForm = ()=>{
     if(email && password && repassword){
