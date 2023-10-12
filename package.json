@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack serve",
     "watch": "webpack --watch",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && node server.js",
     "build-dev": "webpack --mode=development && node server.js"
   },
   "dependencies": {
