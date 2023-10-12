@@ -2,12 +2,12 @@ const express =  require('express');
 require('dotenv').config();
 
 const app = express();
-app.use(express.static('build'));
+app.use(express.static('dist'));
 
 const path = require('path');
 
 app.get('*',(req, res)=>{
-  res.sendFile(path.resolve(__dirname,'build','index.html'));
+  res.sendFile(path.resolve(__dirname,'dist','index.html'));
 })
 
 app.listen(process.env.PORT);

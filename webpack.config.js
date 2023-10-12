@@ -14,7 +14,7 @@ let config = {
     entry: path.resolve(__dirname, './src/index.js'),
     output:{
         publicPath:'auto',
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'static/[id].js',
         libraryTarget: 'umd',
         library: 'lib',
@@ -69,7 +69,7 @@ let config = {
             filename: 'styles/styles.[id].css'
         }),
         new HtmlWebpackPlugin({
-        template: path.resolve(__dirname,"./index.html")
+        template: path.resolve(__dirname,"./src/index.html")
     }
     )],
 
