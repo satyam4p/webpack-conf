@@ -5,7 +5,7 @@
     "start": "webpack serve",
     "watch": "webpack --watch",
     "build": "webpack --mode=production",
-    "build-dev": "webpack --mode=development"
+    "build-dev": "webpack --mode=development && node server.js"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
