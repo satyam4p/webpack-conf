@@ -24,18 +24,20 @@
                 border: 0px;
                 font-size: medium;
                 th{
-                    min-width: 50px;
-                    max-width: 100px;
+                    resize: horizontal;
+                    overflow: auto;
+                    // min-width: 50px;
+                    // max-width: 100px;
                     padding: 5px;
                     // border: 0.5px solid lightgray;
                     font-weight: 500;
                 }
             }
             .table-header th:first-child{
-                width: 20px;
+                // width: 20px;
             }
             .table-header th:last-child{
-                width: 20px;
+                // width: 20px;
             }
             .table-body{
                 font-weight: 510;
@@ -64,10 +66,10 @@
                 }
                 
                 .table-row td:first-child{
-                    min-width: 20px;
+                    // min-width: 20px;
                 }
                 .table-row td:last-child{
-                    min-width: 20px;
+                    // min-width: 20px;
                 }
                 .table-row {
                     .status-value{

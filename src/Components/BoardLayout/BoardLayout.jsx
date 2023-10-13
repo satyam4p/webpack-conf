@@ -130,7 +130,8 @@ const BoardLayout = (props)=>{
                                                     <InputTableField taskMap = {taskMap} id = {task?._id} value = {task.name} changeHandler = {handleNameChange}/>
                                                     : <div style={{width:'100%', height:'inherit', display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}}>
                                                         <span>{task.name}</span>
-                                                        {openTask?.index === index 
+                                                        {
+                                                        openTask?.index === index 
                                                             ? <span onClick={e=>handleTaskOpen(e, task?._id)} style={{padding:'2px', border:'1px solid lightgray'}}><>{iconsMap.expand()}&nbsp; Open</></span>
                                                             : null                                                                    
                                                         }
