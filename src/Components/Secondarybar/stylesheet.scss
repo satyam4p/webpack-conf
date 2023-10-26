@@ -27,23 +27,20 @@
     align-items: center;
     justify-content: space-between;
 
-    .right-section{
-        width: 6%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+    .separator{
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
 
-        .theme-change-btn{
-            border: none;
-            background-color: transparent;
-            padding: 0px;
-            margin: 0px;
-            color: $dark-7;
-        }
-        .theme-change-btn:hover{
-            color: $grape-7;
-        }
+    .theme-change-btn{
+        border: none;
+        background-color: transparent;
+        padding: 0px;
+        margin: 0px;
+        color: $dark-7;
+    }
+    .theme-change-btn:hover{
+        color: $grape-7;
     }
 }
 
@@ -71,8 +68,8 @@
 }
 .profile-btn{
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 2em;
+    height: 2em;
     background-color: #88AF9F;
     margin-left: 10px;
     margin-right: 10px;

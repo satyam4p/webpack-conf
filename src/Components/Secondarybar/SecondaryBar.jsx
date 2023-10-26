@@ -25,7 +25,7 @@ function SecondaryBar({
                             <div className={`bar bar2 ${showSideMenu ? 'showSideMenu' : '' }`} />
                             <div className={`bar bar3 ${showSideMenu ? 'showSideMenu' : '' }`} />
                     </button>
-                    <div className='right-section'>
+                    <div className='separator'></div>
                         <button className='theme-change-btn' onClick={()=>changeTheme()}>
                             {iconsMap.theme(24)}
                         </button>
@@ -33,9 +33,6 @@ function SecondaryBar({
                                 onClick={()=>setToggleProile(!toggleProfile)}>
                                 
                         </button>
-
-                    </div>
-                    
                 </div>
                 <div className={`profile-backdrop ${toggleProfile ? 'show' : 'hide'}`} onClick={()=>setToggleProile(false)}/>
                 <ProfileTogggle toggleProfile={toggleProfile} setToggleProile = {setToggleProile}/>
